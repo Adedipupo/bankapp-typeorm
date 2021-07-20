@@ -20,4 +20,6 @@ export const deleteClient = async(req:Request, res:Response)=>{
     const {clientId} = req.params;
 
    const response = await Client.delete(parseInt(clientId))
+
+   return res.json({response})
 }
