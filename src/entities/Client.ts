@@ -1,9 +1,7 @@
 import {
-  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
 import { Person } from "./utils/Person";
