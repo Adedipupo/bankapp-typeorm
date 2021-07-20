@@ -14,8 +14,7 @@ export const createBankerToClient = async(req:Request, res:Response)=>{
         })
     }
     banker.clients = [
-        ...banker.clients,
-        client
+            client
     ]
 
     await banker.save()
