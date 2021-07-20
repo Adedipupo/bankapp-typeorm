@@ -2,8 +2,10 @@ import {
   Column,
     CreateDateColumn,
     Entity,
+    ManyToMany,
     UpdateDateColumn
   } from "typeorm";
+import { Client } from "./Client";
 import { Person } from "./utils/Person";
   
   @Entity("banker")
@@ -21,6 +23,9 @@ import { Person } from "./utils/Person";
     @UpdateDateColumn()
     updated_at: Date;
   
+    @ManyToMany(
+      () => Client
+    )
 
   }
   
