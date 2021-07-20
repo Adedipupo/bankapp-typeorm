@@ -12,7 +12,8 @@ const main = async() =>{
             username: "macuser",
             password: "1234",
             database: "typeorm",
-            entities: [Client]
+            entities: [Client],
+            synchronize: true
         })
         console.log('Connected to postgres');
     } catch (error) {
