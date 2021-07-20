@@ -1,6 +1,6 @@
 import {Request,Response} from 'express';
 import { Client } from 'src/entities/Client';
-import { Transaction } from '../entities/Transaction';
+import { Transaction, TransactionTypes } from '../entities/Transaction';
 
 
 export const createTransaction = async(req:Request, res:Response)=>{
@@ -22,5 +22,16 @@ export const createTransaction = async(req:Request, res:Response)=>{
     })
 
     await transaction.save()
-    res.status(200).json({transaction})
+
+    if(type === TransactionTypes.DEPOSIT){
+        client.balance = client.balance + amount;
+    }else if(type === TransactionTypes.WITHDRAW){
+        client.balance = client.balance - amount
+    }
+    await client.save()
+
+    return res.status(201).json({
+        msg:'transaction added'
+    })
+
 }
