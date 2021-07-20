@@ -26,10 +26,11 @@ export const queryClient = async(req:Request, res:Response)=>{
     const client = await createQueryBuilder(
         'client'
     )
-    .select('client')
+    .select('client.first_name')
+    .addSelect('client.balance')
     .from(Client,'client')
-    .where('client.id = :clientId', {clientId: 3})
-    .getOne()
+    .where('client.balance >= :balance', {balance: 500})
+    .getMany()
 
     return res.json({client})
 }
