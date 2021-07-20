@@ -32,6 +32,10 @@ import { Person } from "./utils/Person";
       joinColumn: {
         name: "banker",
         referencedColumnName: 'id'
+      },
+      inverseJoinColumn: {
+        name: "client",
+        referencedColumnName: 'id'
       }
     })
     clients: Client[];

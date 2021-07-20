@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
   OneToMany,
   UpdateDateColumn,
 } from "typeorm";
+import { Banker } from "./Banker";
 import { Transaction } from "./Transaction";
 import { Person } from "./utils/Person";
 
@@ -44,4 +46,8 @@ export class Client extends Person {
   )
   transactions: Transaction[];
 
+  @ManyToMany(
+      () => Banker
+  )
+  banker: Banker[];
 }
