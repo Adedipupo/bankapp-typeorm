@@ -30,6 +30,8 @@ export const queryClient = async(req:Request, res:Response)=>{
     .from(Client,'client')
     .where('client.id = :clientId', {clientId: 3})
     .getOne()
+
+    return res.json({client})
 }
 
 export const deleteClient = async(req:Request, res:Response)=>{
