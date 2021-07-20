@@ -3,6 +3,6 @@ import { createClient } from "../controllers/client";
 
 const router = express.Router();
 
-router.post("/", createClient);
+router.post("/create", createClient);
 
 export default router;

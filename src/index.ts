@@ -22,7 +22,7 @@ const main = async () => {
     });
     console.log("Connected to postgres");
     app.use(express.json());
-    app.use('/create',clientRoutes)
+    app.use('/client',clientRoutes)
     app.listen(8080,()=>{
         console.log(`Now runing on port ${port}`)
     })
