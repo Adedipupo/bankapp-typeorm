@@ -2,6 +2,7 @@ import {
   Column,
     CreateDateColumn,
     Entity,
+    JoinTable,
     ManyToMany,
     UpdateDateColumn
   } from "typeorm";
@@ -26,6 +27,14 @@ import { Person } from "./utils/Person";
     @ManyToMany(
       () => Client
     )
+    @JoinTable({
+      name: "bankers_clients",
+      joinColumn: {
+        name: "banker",
+        referencedColumnName: 'id'
+      }
+    })
+    clients: Client[];
 
   }
   
