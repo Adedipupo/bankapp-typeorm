@@ -3,6 +3,6 @@ import { createBankerToClient } from "../controllers/bankerToClient";
 
 const router = express.Router();
 
-router.post("/client/:clientId/transaction", createBankerToClient);
+router.put("/banker/:bankerId/client/:clientId", createBankerToClient);
 
 export default router;
