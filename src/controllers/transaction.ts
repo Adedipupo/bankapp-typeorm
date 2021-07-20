@@ -1,5 +1,5 @@
 import {Request,Response} from 'express';
-import { Client } from 'src/entities/Client';
+import { Client } from '../entities/Client';
 import { Transaction, TransactionTypes } from '../entities/Transaction';
 
 
