@@ -1,4 +1,5 @@
 import { createConnection } from "typeorm";
+import { Client } from "./entities/Client";
 
 
 
@@ -10,7 +11,8 @@ const main = async() =>{
             port: 5431,
             username: "macuser",
             password: "1234",
-            database: "typeorm"
+            database: "typeorm",
+            entities: [Client]
         })
         console.log('Connected to postgres');
     } catch (error) {

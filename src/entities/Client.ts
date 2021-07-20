@@ -5,12 +5,15 @@ import {
   Entity,
   ManyToMany,
   OneToMany,
+  PrimaryColumn,
   Transaction,
   UpdateDateColumn,
 } from "typeorm";
 
 @Entity("client")
 export class Client extends BaseEntity {
+    @PrimaryColumn()
+    id:number
   @Column()
   first_name: string;
   @Column()
