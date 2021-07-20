@@ -7,8 +7,6 @@ export class Person extends BaseEntity {
   @Column()
   first_name: string;
   @Column()
-  middle_name: string;
-  @Column()
   last_name: string;
   @Column({
     unique: true,
