@@ -14,7 +14,8 @@ const main = async() =>{
         })
         console.log('Connected to postgres');
     } catch (error) {
-        console.error('Unable to connect to postgres')
+        console.error(error)
+        throw new Error('Unable to connect to postgres')
     }
 }
 
