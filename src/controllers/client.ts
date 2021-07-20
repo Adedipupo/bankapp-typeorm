@@ -17,5 +17,7 @@ export const createClient = async(req:Request, res:Response)=>{
 }
 
 export const deleteClient = async(req:Request, res:Response)=>{
-    const client = req.params;
+    const {clientId} = req.params;
+
+   const response = await Client.delete(parseInt(clientId))
 }
