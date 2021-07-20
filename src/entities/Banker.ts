@@ -3,15 +3,12 @@ import {
     Column,
     CreateDateColumn,
     Entity,
-    ManyToMany,
-    OneToMany,
     PrimaryColumn,
-    Transaction,
-    UpdateDateColumn,
+    UpdateDateColumn
   } from "typeorm";
   
-  @Entity("client")
-  export class Client extends BaseEntity {
+  @Entity("banker")
+  export class Banker extends BaseEntity {
       @PrimaryColumn()
       id:number
     @Column()
@@ -27,6 +24,12 @@ import {
       length: 10,
     })
     card_number: string;
+
+    @Column({
+      unique:true,
+      length: 10
+    })
+    employee_number: number;
   
     @CreateDateColumn()
     created_at: Date;
