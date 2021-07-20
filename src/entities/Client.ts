@@ -3,9 +3,9 @@ import {
   CreateDateColumn,
   Entity,
   OneToMany,
-  Transaction,
   UpdateDateColumn,
 } from "typeorm";
+import { Transaction } from "./Transaction";
 import { Person } from "./utils/Person";
 
 @Entity("client")
