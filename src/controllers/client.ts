@@ -15,6 +15,11 @@ export const createClient = async(req:Request, res:Response)=>{
     await client.save()
     res.status(200).json({client})
 }
+export const getAllClient = async(req:Request, res:Response)=>{
+    const client = await Client.find()
+
+    return res.status(200).json({client})
+}
 
 export const deleteClient = async(req:Request, res:Response)=>{
     const {clientId} = req.params;
