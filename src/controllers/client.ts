@@ -1,4 +1,5 @@
 import {Request,Response} from 'express';
+import { createQueryBuilder } from 'typeorm';
 import { Client } from '../entities/Client';
 
 
@@ -19,6 +20,14 @@ export const getAllClient = async(req:Request, res:Response)=>{
     const client = await Client.find()
 
     return res.status(200).json({client})
+}
+
+export const queryClient = async(req:Request, res:Response)=>{
+    const client = createQueryBuilder(
+        'client'
+    )
+    .select('client')
+    .from(Client,'client')
 }
 
 export const deleteClient = async(req:Request, res:Response)=>{
