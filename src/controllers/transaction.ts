@@ -8,5 +8,19 @@ export const createTransaction = async(req:Request, res:Response)=>{
     const {type,amount} = req.body;
 
     const client = await Client.findOne(parseInt(clientId))
-    res.status(200).json({})
+
+    if(!client){
+        return res.status(400).json({
+            msg: 'Client not found'
+        })
+    }
+
+    const transaction = Transaction.create({
+        type,
+        amount,
+        client
+    })
+
+    await transaction.save()
+    res.status(200).json({transaction})
 }
