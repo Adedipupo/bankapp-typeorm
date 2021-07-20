@@ -8,9 +8,10 @@ export const createClient = async(req:Request, res:Response)=>{
     const client = Client.create({
         first_name: firstName,
         last_name: lastName,
-        email: email,
+        email,
         card_number: cardNumber,
-        balance: balance,
+        balance
     })
-    res.status(200).json({name})
+    await client.save()
+    res.status(200).json({client})
 }
