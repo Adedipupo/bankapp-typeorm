@@ -1,5 +1,5 @@
 import {Request,Response} from 'express';
-import { Client } from 'src/entities/Client';
+import { Client } from '../entities/Client';
 
 
 export const createClient = async(req:Request, res:Response)=>{
