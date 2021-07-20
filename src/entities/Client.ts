@@ -3,10 +3,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToMany,
-  OneToMany,
   PrimaryColumn,
-  Transaction,
   UpdateDateColumn,
 } from "typeorm";
 
@@ -54,11 +51,4 @@ export class Client extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-//   @ManyToMany((type) => Banker, {
-//     cascade: true,
-//   })
-//   bankers: Banker[];
-
-//   @OneToMany(() => Transaction, (transaction) => transaction.client)
-//   transactions: Transaction[];
 }

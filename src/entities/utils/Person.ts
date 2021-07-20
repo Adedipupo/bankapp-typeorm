@@ -1,14 +1,12 @@
 import {
     BaseEntity,
     Column,
-    CreateDateColumn,
     Entity,
     PrimaryColumn,
-    UpdateDateColumn
   } from "typeorm";
   
-  @Entity("banker")
-  export class Banker extends BaseEntity {
+  @Entity()
+  export class Person extends BaseEntity {
       @PrimaryColumn()
       id:number
     @Column()
@@ -24,19 +22,9 @@ import {
       length: 10,
     })
     card_number: string;
-
     @Column({
-      unique:true,
-      length: 10
+      type: "numeric",
     })
-    employee_number: string;
-  
-    @CreateDateColumn()
-    created_at: Date;
-  
-    @UpdateDateColumn()
-    updated_at: Date;
-  
-
+    balance: number;
   }
   
