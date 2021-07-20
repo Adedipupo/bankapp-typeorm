@@ -14,4 +14,8 @@ export class Transaction extends BaseEntity{
         enum: TransactionTypes
     })
     type: string;
+    @Column({
+        type: "numeric"
+    })
+    amount: number;
 }
