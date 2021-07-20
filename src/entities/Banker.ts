@@ -25,7 +25,10 @@ import { Person } from "./utils/Person";
     updated_at: Date;
   
     @ManyToMany(
-      () => Client
+      () => Client,
+      {
+        cascade: true
+      }
     )
     @JoinTable({
       name: "bankers_clients",
