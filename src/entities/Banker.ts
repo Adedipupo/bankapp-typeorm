@@ -6,24 +6,10 @@ import {
     PrimaryColumn,
     UpdateDateColumn
   } from "typeorm";
+import { Person } from "./utils/Person";
   
   @Entity("banker")
-  export class Banker extends BaseEntity {
-      @PrimaryColumn()
-      id:number
-    @Column()
-    first_name: string;
-    @Column()
-    last_name: string;
-    @Column({
-      unique: true,
-    })
-    email: string;
-    @Column({
-      unique: true,
-      length: 10,
-    })
-    card_number: string;
+  export class Banker extends Person {
 
     @Column({
       unique:true,
