@@ -15,3 +15,7 @@ export const createClient = async(req:Request, res:Response)=>{
     await client.save()
     res.status(200).json({client})
 }
+
+export const deleteClient = async(req:Request, res:Response)=>{
+    const client = req.params;
+}
