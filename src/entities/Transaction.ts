@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Client } from "./Client";
 
 export enum TransactionTypes {
@@ -24,4 +24,8 @@ export class Transaction extends BaseEntity{
         () => Client,
         client => client.transactions
     )
+    @JoinColumn({
+        name: 'client_id'
+    })
+    client: Client;
 }
