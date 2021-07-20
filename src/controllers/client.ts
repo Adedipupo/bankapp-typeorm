@@ -23,7 +23,7 @@ export const getAllClient = async(req:Request, res:Response)=>{
 }
 
 export const queryClient = async(req:Request, res:Response)=>{
-    const client = createQueryBuilder(
+    const client = await createQueryBuilder(
         'client'
     )
     .select('client')
