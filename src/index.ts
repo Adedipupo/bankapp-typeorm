@@ -1,6 +1,7 @@
 import express from 'express';
 import { createConnection } from "typeorm";
 import clientRoutes  from './routes/client';
+import bankerRoutes  from './routes/banker';
 import { Banker } from "./entities/Banker";
 import { Client } from "./entities/Client";
 import { Transaction } from "./entities/Transaction";
@@ -23,6 +24,7 @@ const main = async () => {
     console.log("Connected to postgres");
     app.use(express.json());
     app.use('/client',clientRoutes)
+    app.use('/banker',bankerRoutes)
     app.listen(8080,()=>{
         console.log(`Now runing on port ${port}`)
     })
