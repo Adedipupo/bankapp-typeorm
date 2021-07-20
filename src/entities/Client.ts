@@ -2,6 +2,8 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
+  Transaction,
   UpdateDateColumn,
 } from "typeorm";
 import { Person } from "./utils/Person";
@@ -35,5 +37,11 @@ export class Client extends Person {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(
+      () => Transaction,
+      transaction => transaction.client
+  )
+  transactions: Transaction[];
 
 }
