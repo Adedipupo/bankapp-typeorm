@@ -20,7 +20,7 @@ const main = async () => {
       synchronize: true,
     });
     console.log("Connected to postgres");
-
+    app.use(express.json());
     app.listen(8080,()=>{
         console.log(`Now runing on port ${port}`)
     })
