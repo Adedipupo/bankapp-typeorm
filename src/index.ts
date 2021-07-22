@@ -17,13 +17,17 @@ const main = async () => {
   try {
     await createConnection({
       type: "postgres",
-      host: process.env.Host,
-      port: process.env.PORT as unknown as number,
-      username: process.env.Username,
-      password: process.env.Password,
-      database: process.env.Database,
+      url: process.env.DATABASE_URL,
+      // host: process.env.Host,
+      // port: process.env.PORT as unknown as number,
+      // username: process.env.Username,
+      // password: process.env.Password,
+      // database: process.env.Database,
       entities: [Client, Banker, Transaction],
       synchronize: true,
+      ssl: {
+        rejectUnauthorized: false,
+      }
     });
     console.log("Connected to postgres");
     app.use(express.json());
