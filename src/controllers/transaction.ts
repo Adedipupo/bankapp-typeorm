@@ -2,7 +2,6 @@ import {Request,Response} from 'express';
 import { Client } from '../entities/Client';
 import { Transaction, TransactionTypes } from '../entities/Transaction';
 
-
 export const createTransaction = async(req:Request, res:Response)=>{
     const {clientId} = req.params;
     const {type,amount} = req.body;
